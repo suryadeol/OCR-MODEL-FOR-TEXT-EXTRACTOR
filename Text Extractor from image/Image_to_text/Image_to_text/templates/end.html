@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>File Download Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url("static/images/background2.jpg");
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column; /* Center elements vertically */
+        }
+
+        img {
+            border-radius: 50%;
+            position: relative;
+            bottom: 20px;
+            width: 200px;
+            height: 200px;
+            border: 5px solid #006400;
+        }
+
+        h1 {
+            color: #fff;
+            position: relative;
+            bottom: 20px;
+            font-size: 36px; /* Larger font size for "Thank You" */
+            font-weight: bold;
+        }
+
+        h2 {
+            color: yellow;
+            font-size: 24px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 20px 40px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        button:hover {
+            background-color: #FF5733; /* Red color on hover */
+        }
+    </style>
+</head>
+
+<body>
+    <h1>"Have Great Day...!"</h1>
+    <img src="static/images/thank.jpg" alt="Thank You">
+    <h2>Your File is Ready for Download.</h2>
+
+    <div class="buttons">
+
+        <form action="/pdf" method="post">
+            <button id="download-pdf-button">Download as PDF</button>
+        </form>
+        <form action="/text" method="post">
+            <button id="download-text-button">Download as Text</button>
+        </form>
+        <form action="/">
+            <button id="go-to-home-button">Go To Home</button>
+        </form>
+        
+    </div>
+</body>
+
+</html>

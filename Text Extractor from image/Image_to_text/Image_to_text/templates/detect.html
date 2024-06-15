@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Text Extraction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('static/images/background2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 50px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 36px;
+            font-weight: bold;
+            margin: 20px 0 30px;
+        }
+
+        p {
+            color: #555;
+            font-size: 20px;
+            margin-bottom: 40px;
+        }
+
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            padding: 15px 40px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 24px;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #FF0000;
+        }
+
+        #extraction-message {
+            display: none;
+            font-weight: bold;
+            text-align: center;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 0;
+            margin-top: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Our Model Detected Language As {{n}}</h1>
+
+        <form action="/extraction" method="post">
+            <button id="extract-button">Extract</button>
+            <p id="extraction-message">Your extraction is in progress...</p>
+        </form>
+    </div>
+
+    <script>
+        // JavaScript code to show the extraction message and navigate after 3 seconds
+        const extractionMessage = document.getElementById("extraction-message");
+        const extractButton = document.getElementById("extract-button");
+        const extractionForm = extractButton.parentElement;
+
+        extractButton.addEventListener("click", function (event) {
+            // Prevent the form from being submitted (change to your actual extraction logic)
+            event.preventDefault();
+
+            // Show the extraction message
+            extractionMessage.style.display = "block";
+
+            // Delay navigation to the extraction page by 3 seconds
+            setTimeout(function () {
+                // Navigate to the extraction page
+                window.location.href = "/extraction"; // Replace with the actual URL
+            }, 3000); // 3 seconds (3000 milliseconds)
+        });
+    </script>
+</body>
+
+</html>
